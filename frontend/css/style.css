@@ -1,0 +1,137 @@
+/* ===== VARIABLES CSS ===== */
+:root {
+   --primary-color: #4A90E2;
+   --secondary-color: #7ED321;
+   --accent-color: #F5A623;
+   --text-primary: #2C3E50;
+   --text-secondary: #7F8C8D;
+   --bg-primary: #F8F9FA;
+   --bg-secondary: lightblue;
+   --border-color: #E9ECEF;
+   --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+   --shadow-medium: 0px 3px 30px rgba(247, 247, 247, 0.521);
+   --border-radius: 18px;
+   --transition: all 0.3s ease;
+   --font-family: 'Poppins', sans-serif;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: var(--font-family);
+   background-color: rgba(21, 103, 151, 0.719);
+   background-size: cover;
+   background-position: left;
+   line-height: 1.6;
+   min-height: 100vh;
+}
+
+.container {
+   max-width: 700px;
+   margin: 30px auto;
+   background: var(--bg-secondary);
+   padding: 30px;
+   border-radius: var(--border-radius);
+   box-shadow: var(--shadow-medium);
+   /* Ajout de transparence */
+   background-color: rgba(255, 255, 255, 0.274)
+      /* lightblue avec transparence */
+}
+
+.block-1 h1 {
+   text-align: center;
+   margin-bottom: 20px;
+   color: white;
+}
+
+.block-1 form {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 30px;
+}
+
+.block-1 input[type="text"] {
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid var(--border-color);
+   border-radius: var(--border-radius);
+   width: 70%;
+   transition: var(--transition);
+}
+
+.block-1 button {
+   padding: 10px 20px;
+   margin-left: 10px;
+   background-color: var(--primary-color);
+   color: #fff;
+   border: none;
+   border-radius: var(--border-radius);
+   cursor: pointer;
+   transition: var(--transition);
+}
+
+.block-1 button:hover {
+   background-color: var(--secondary-color);
+}
+
+.hidden {
+   display: none;
+}
+
+.big-weather-icon {
+   margin-left: 100px;
+   font-size: 70px;
+
+}
+
+
+
+.block-2 h2 {
+   font-size: 30px;
+   text-align: left;
+   margin-bottom: 30px;
+   color: rgb(253, 253, 253);
+}
+
+
+
+#temperature {
+   font-weight: bold;
+   min-width: 100px;
+
+}
+
+#humidity {
+   font-weight: bold;
+   min-width: 100px;
+}
+
+#wind {
+   font-weight: bold;
+   min-width: 100px;
+}
+
+#conditions {
+   font-weight: bold;
+   min-width: 100px;
+}
+
+
+.block-2 p {
+   display: flex;
+   flex-direction: row;
+   align-items: flex-end;
+   justify-content: space-between;
+   padding: 20px;
+   color: #252020;
+   font-weight: bold;
+   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.644);
+   font-size: 20px;
+   margin: 10px 60px;
+   color: rgba(0, 0, 0, 0.788);
+}

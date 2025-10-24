@@ -1,0 +1,21 @@
+# Fichiers de configuration sensibles
+# ⚠️ NE JAMAIS COMMITTER CES FICHIERS !
+backend/config/api_keys.php
+backend/config/database.php
+
+
+# Logs et cache
+*.log
+/cache/
+/logs/
+
+# Fichiers système
+Thumbs.db
+
+# IDE
+.vscode/
+
+
+# Dépendances (si vous en avez)
+/vendor/
+/node_modules/
