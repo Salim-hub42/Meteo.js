@@ -1,14 +1,14 @@
 const apikey = "b0fa3a872abf8a99cac867c5ffe8f2fd";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
 
-function createMeteoBlock(villesRecherchees, tempC, villesChaud, moyenneHumidite) {
+function createMeteoBlock(villesRecherches, tempC, villesChaud, moyenneHumidite) {
    const bloc = document.createElement('div');
    bloc.style.marginTop = '30px';
    bloc.style.background = 'rgba(255,255,255,0.15)';
    bloc.style.padding = '20px';
    bloc.style.borderRadius = '12px';
    bloc.innerHTML = `
-    <h3>Statistiques météo sur ${villesRecherchees.length} villes (Paris, Lyon, Jeddah, Marseille, Toulouse, Bordeaux)</h3>
+    <h3>Statistiques météo sur ${villesRecherches.length} villes (Paris, Lyon, Jeddah, Marseille, Toulouse, Bordeaux)</h3>
     <ul>
       <li>Températures (°C) : ${tempC.join(', ')}</li>
       <li>Villes où il fait chaud (>20°C) : ${villesChaud.map(d => d.name).join(', ') || 'Aucune'}</li>
@@ -48,10 +48,10 @@ document.getElementById('btn').addEventListener('click', function (event) { // A
 
 
 // Exemple : récupérer la météo de plusieurs villes et utiliser map/filter/reduce
-const villesRecherchees = ["Paris", "Lyon", "jeddah", "Marseille", "Toulouse", "Bordeaux"];
+const villesRecherches = ["Paris", "Lyon", "jeddah", "Marseille", "Toulouse", "Bordeaux"];
 
 Promise.all( // Promise.all pour attendre que toutes les requêtes soient terminées les requetes sont les suivantes (paris, lyon, jeddah, marseille, toulouse, bordeaux)
-   villesRecherchees.map(ville => { // map pour créer un tableau de promesses de requêtes fetch
+   villesRecherches.map(ville => { // map pour créer un tableau de promesses de requêtes fetch
       const url = apiUrl.replace("{city name}", ville).replace("{API key}", apikey); // Remplace les placeholders par les valeurs réelles
       return fetch(url).then(response => response.json()); // Effectue la requête fetch et convertit la réponse en JSON
    })
@@ -70,7 +70,7 @@ Promise.all( // Promise.all pour attendre que toutes les requêtes soient termin
 
    // Affichage dans la page
 
-   let bloc = createMeteoBlock(villesRecherchees, tempC, villesChaud, moyenneHumidite)
+   let bloc = createMeteoBlock(villesRecherches, tempC, villesChaud, moyenneHumidite)
    document.querySelector('.container').appendChild(bloc);
 });
 
@@ -93,7 +93,8 @@ setTimeout(() => {
       { name: "Lyon", lat: 45.7640, lon: 4.8357 },
       { name: "Marseille", lat: 43.2965, lon: 5.3698 },
       { name: "Toulouse", lat: 43.6047, lon: 1.4442 },
-      { name: "Bordeaux", lat: 44.8378, lon: -0.5792 }
+      { name: "Bordeaux", lat: 44.8378, lon: -0.5792 },
+      { name: "El oued", lat: 33.3833, lon: 6.8667 }
    ];
 
    // Pour chaque ville, récupérer la météo et ajouter un marqueur
